@@ -8,12 +8,16 @@ const listingSchema = new Schema({
     },
     description: String,
     image: {
+        url:{
         type: String,
-        set: (v) => v==="" ? "https://unsplash.com/photos/aerial-photography-of-beachside-b_Iz9tkrw6A" : v,  
+        set: (v) => v==="" ? "default link" : v,
+        },
+        filename: String  
     },
     price: Number,
     location: String,
     country: String,
 });
 
-module.exports = mongoose.model("Listing", listingSchema);
+const Listing = mongoose.model("Listing", listingSchema);
+module.exports = Listing;
