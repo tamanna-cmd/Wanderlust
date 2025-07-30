@@ -10,7 +10,7 @@ const listingSchema = new Schema({
     image: {
         url:{
         type: String,
-        set: (v) => v==="" ? "default link" : v,
+        set: (v) => v === "" ? "https://via.placeholder.com/300x200.png?text=No+Image" : v,
         },
         filename: String  
     },
